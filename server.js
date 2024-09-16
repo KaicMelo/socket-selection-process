@@ -4,12 +4,7 @@ const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, {
-  cors: {
-    origin: '*',
-    methods: ["GET", "POST"]
-  }
-});
+const io = socketIo(server);
 
 io.on('connection', (socket) => {
   console.log('New client connected');
@@ -32,5 +27,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(3001, () => {
-  console.log('Listening on port 3000');
+  console.log('Listening on port 3001');
 });
