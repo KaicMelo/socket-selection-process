@@ -4,7 +4,13 @@ const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, { origins: '*:*'});
+const io = socketIo(server,{
+  cors: {
+    origin: ['http://localhost:4200','https://ons-tnhx.onrender.com'],
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'UPDATE', 'OPTIONS'],
+    credentials: true,
+  }
+});
 
 io.on('connection', (socket) => {
   console.log('New client connected');
