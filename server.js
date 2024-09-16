@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server,{
   cors: {
-    origin: ['http://localhost:4200','https://ons-tnhx.onrender.com'],
+    origin: ['http://localhost:4200','https://ons-tnhx.onrender.com', 'https://onsteam-4be44.web.app/','https://onsprocessoseletivo.web.app'],
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'UPDATE', 'OPTIONS'],
     credentials: true,
   }
